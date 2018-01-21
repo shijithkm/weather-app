@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="current-container">
+				<h1>{{ current.cityName }}</h1>
+				<h2>{{ current.temp }} &#8451;</h2>
+				<img src="https://openweathermap.org/img/w/{{current.icon}}.png" />
+				<h4>{{ current.weatherKind }}</h4>
+				<h4>{{ current.min }} &#8451;</h4>
+				<h4>{{ current.max }} &#8451;</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-6  col-xs-12" *ngFor="let item of forecast.list">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<h4> {{ item.dt | date:'h:mm:ss a' }} </h4>
+					<h5>
+						{{ item.temp.day }} &#8451;
+						<img src="https://openweathermap.org/img/w/{{ item.weather[0].icon }}.png" />
+					</h5>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
